@@ -5,6 +5,8 @@ services:
     volumes:
       - ./config:/acme.sh
     environment:
+      - AUTO_UPGRADE=0             # disable auto update
+      - LOG_FILE=/proc/1/fd/1      # redirect all cron output to stdout
       - CF_Key=KEY
       - CF_Email=EMALL
     command: daemon
