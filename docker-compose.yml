@@ -1,0 +1,13 @@
+version: '2'
+services:
+  acme:
+    image: xupaddy/acme.sh:latest
+    volumes:
+      - ./config:/acme.sh
+    environment:
+      - CF_Key=KEY
+      - CF_Email=EMALL
+    command: daemon
+    #first time
+    #command: --issue --dns dns_cf -d pooi.moe -d *.pooi.moe  
+    container_name: acme
